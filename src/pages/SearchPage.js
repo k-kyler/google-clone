@@ -86,7 +86,7 @@ function SearchPage() {
 
                     {data?.items.map((item, index) => (
                         <div className="searchPage__result" key={index}>
-                            <a href={item.displayLink}>
+                            <a href={item.link}>
                                 {item.pagemap?.cse_image?.length > 0 &&
                                     item.pagemap?.cse_image[0]?.src && (
                                         <img
