@@ -6,7 +6,7 @@
 
 .home__header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 1rem 1.5rem;
     align-items: center;
 }

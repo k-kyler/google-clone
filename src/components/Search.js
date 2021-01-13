@@ -5,13 +5,22 @@ import KeyboardIcon from "@material-ui/icons/Keyboard";
 import MicIcon from "@material-ui/icons/Mic";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import { actionTypes } from "../reducer";
+import { useStateValue } from "../StateProvider";
 
 function Search({ hideButtons = false }) {
+    const [{ term }, dispatch] = useStateValue();
+
     const [input, setInput] = useState("");
     const history = useHistory();
 
     const searchHandler = (e) => {
         e.preventDefault();
+
+        dispatch({
+            type: actionTypes.SET_SEARCH_TERM,
+            term: input,
+        });
 
         history.push("/search");
     };
@@ -23,6 +32,7 @@ function Search({ hideButtons = false }) {
                 <input
                     onChange={(e) => setInput(e.target.value)}
                     value={input}
+                    placeholder={term}
                 />
                 <KeyboardIcon className="search__keyboardIcon" />
                 <MicIcon />
