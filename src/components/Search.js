@@ -9,7 +9,7 @@ import { actionTypes } from "../reducer";
 import { useStateValue } from "../StateProvider";
 
 function Search({ hideButtons = false }) {
-    const [{ term }, dispatch] = useStateValue();
+    const [{}, dispatch] = useStateValue();
 
     const [input, setInput] = useState("");
     const history = useHistory();
@@ -32,7 +32,6 @@ function Search({ hideButtons = false }) {
                 <input
                     onChange={(e) => setInput(e.target.value)}
                     value={input}
-                    placeholder={term}
                 />
                 <KeyboardIcon className="search__keyboardIcon" />
                 <MicIcon />

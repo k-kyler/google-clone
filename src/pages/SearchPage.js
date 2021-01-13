@@ -102,7 +102,7 @@ function SearchPage() {
                             </a>
 
                             <a
-                                href={item.displayLink}
+                                href={item.link}
                                 className="searchPage__resultTitle"
                             >
                                 <h2>{item.title}</h2>
