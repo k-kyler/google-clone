@@ -40,5 +40,6 @@
 }
 
 .home__body > img {
-    object-fit: contain;
+    width: 20rem;
+    align-self: center;
 }
